@@ -1,0 +1,45 @@
+// Abstract class
+abstract class Shape {
+    // Abstract method (no body)
+    abstract double area();
+}
+
+// Rectangle class extending Shape
+class Rectangle extends Shape {
+    double length, width;
+
+    Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    // Implementing abstract method
+    double area() {
+        return length * width;
+    }
+}
+
+// Square class extending Shape
+class Square extends Shape {
+    double side;
+
+    Square(double side) {
+        this.side = side;
+    }
+
+    // Implementing abstract method
+    double area() {
+        return side * side;
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        Shape rect = new Rectangle(10, 5);
+        Shape sq = new Square(6);
+
+        System.out.println("Area of Rectangle: " + rect.area());
+        System.out.println("Area of Square: " + sq.area());
+    }
+}
